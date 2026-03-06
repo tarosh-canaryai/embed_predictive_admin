@@ -10,11 +10,6 @@ import os
 API_BASE_URL = "https://predictive-ai-server.azurewebsites.net/api/v1/admin"
 PAGE_LIMIT = 10
 
-
-# SERVER_KEY = os.getenv("APP_SERVER_KEY")
-SERVER_KEY = st.secrets["APP_SERVER_KEY"]
-HEADERS = {"Authorization": f"Bearer {SERVER_KEY}"}
-
 st.set_page_config(page_title="Admin Prediction Dashboard", layout="wide")
 
 st.markdown("""
@@ -81,7 +76,7 @@ st.markdown("""
 def fetch_data(endpoint: str, params: dict = None):
     try:
         clean_params = {k: v for k, v in (params or {}).items() if v is not None}
-        r = requests.get(f"{API_BASE_URL}{endpoint}", params=clean_params, headers=HEADERS, timeout=10)
+        r = requests.get(f"{API_BASE_URL}{endpoint}", params=clean_params, timeout=10)
         r.raise_for_status()
         return r.json()
     except requests.exceptions.ConnectionError:
