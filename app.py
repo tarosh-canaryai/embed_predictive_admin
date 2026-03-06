@@ -7,7 +7,7 @@ import os
 
 
 # --- Configuration ---
-API_BASE_URL = "http://127.0.0.1:8000/api/v1/admin"
+API_BASE_URL = "https://salmon-sand-084d87d0f.2.azurestaticapps.net/api/v1/admin"
 PAGE_LIMIT = 10
 
 
