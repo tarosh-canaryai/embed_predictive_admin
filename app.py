@@ -7,7 +7,7 @@ import os
 
 
 # --- Configuration ---
-API_BASE_URL = "https://salmon-sand-084d87d0f.2.azurestaticapps.net/api/v1/admin"
+API_BASE_URL = "https://predictive-ai-server.azurewebsites.net/api/v1/admin"
 PAGE_LIMIT = 10
 
 
